@@ -11,5 +11,5 @@ function alphabet(str){
 
 
 //test
-const string = "hello";
+var string = "hello";
 console.log(alphabet(string));
