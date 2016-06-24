@@ -8,9 +8,9 @@ function formatPlaces(str){
   var places = str.split(" ");
   var newStr = "";
   for(var i = 0; i < places.length; i++){
-    if(i = places.length - 2){
-      newStr += places + ", and ";
-    } else if(i = places.length - 1){
+    if(i === places.length - 2){
+      newStr += places[i] + ", and ";
+    } else if(i === places.length - 1){
       newStr += places[i];
     } else {
       newStr += places[i] + ", ";
@@ -18,3 +18,6 @@ function formatPlaces(str){
   }
   return newStr;
 }
+
+
+console.log(formatPlaces(places));
