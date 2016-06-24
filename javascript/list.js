@@ -45,25 +45,39 @@ var list3 = {
 };
 
 
-function showNums(list){
-  var nums = [];
-  for(var key1 in list){
-    if(key1 === 'value'){
-      nums.push(list[key1]);
-    }
-    for(var key2 in list[key1]){
-      if(key2 === 'value'){
-        nums.push(list[key1][key2]);
-      }
-      for(var key3 in list[key1][key2]){
-        if(key3 === 'value'){
-          nums.push(list[key1][key2][key3]);
-        }
-      }
-    }
+// function showNums(list){
+//   var nums = [];
+//   for(var key1 in list){
+//     if(key1 === 'value'){
+//       nums.push(list[key1]);
+//     }
+//     for(var key2 in list[key1]){
+//       if(key2 === 'value'){
+//         nums.push(list[key1][key2]);
+//       }
+//       for(var key3 in list[key1][key2]){
+//         if(key3 === 'value'){
+//           nums.push(list[key1][key2][key3]);
+//         }
+//       }
+//     }
+//   }
+//   return nums;
+// }
+
+
+function showNums(obj, arr){
+  if(!arr){
+    arr = [];
   }
-  return nums;
+  arr.push(obj.value);
+  if(obj.next){
+    return showNums(obj.next, arr);
+  } else {
+    return arr;
+  }
 }
+
 
 console.log(showNums(list1));
 console.log(showNums(list2));
